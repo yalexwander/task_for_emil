@@ -1,0 +1,10 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% trans %}Calculate item price {% endtrans %}{% endblock %}
+
+{% block body %}
+  {% include 'order/_form.html.twig' with { form: form }%}
+  {% if summary|length %}
+      {% include 'order/_summary.html.twig' with { summary: summary, form: form }%}
+  {% endif %}
+{% endblock %}
